@@ -8,9 +8,9 @@
     ".": "./src/index.mjs"
   },
   "bin": {
-    "js-codeviz": "./bin/js-codeviz.mjs",
-    "codeviz-build-chunk-graph": "./bin/build-chunk-graph.mjs",
-    "codeviz-build-lazy-graph": "./bin/build-lazy-graph.mjs"
+    "js-codeviz": "bin/js-codeviz.mjs",
+    "codeviz-build-chunk-graph": "bin/build-chunk-graph.mjs",
+    "codeviz-build-lazy-graph": "bin/build-lazy-graph.mjs"
   },
   "files": [
     "bin",
