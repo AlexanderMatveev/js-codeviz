@@ -1,0 +1,6 @@
+node_modules/
+dist/
+coverage/
+*.tgz
+chunk-graph.html
+lazy-graph.html

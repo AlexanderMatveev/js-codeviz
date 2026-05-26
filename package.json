@@ -1,0 +1,60 @@
+{
+  "name": "js-codeviz",
+  "version": "0.1.0",
+  "description": "Build chunk and lazy-import dependency graphs as HTML reports",
+  "type": "module",
+  "main": "./src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "bin": {
+    "js-codeviz": "./bin/js-codeviz.mjs",
+    "codeviz-build-chunk-graph": "./bin/build-chunk-graph.mjs",
+    "codeviz-build-lazy-graph": "./bin/build-lazy-graph.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:chunk-graph": "node ./bin/build-chunk-graph.mjs",
+    "build:lazy-graph": "node ./bin/build-lazy-graph.mjs",
+    "lint": "node --check ./src/*.mjs ./bin/*.mjs",
+    "lint:styles": "stylelint \"**/*.css\" --allow-empty-input",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "prepublishOnly": "npm run lint && npm pack --dry-run"
+  },
+  "keywords": [
+    "vite",
+    "chunks",
+    "code-splitting",
+    "visualization",
+    "typescript"
+  ],
+  "author": "Aleksandr Matveev",
+  "license": "MIT",
+  "homepage": "https://github.com/AlexanderMatveev/js-codeviz#readme",
+  "bugs": {
+    "url": "https://github.com/AlexanderMatveev/js-codeviz/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderMatveev/js-codeviz.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "stylelint": "^16.26.1"
+  }
+}
