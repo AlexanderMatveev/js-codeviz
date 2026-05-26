@@ -7,15 +7,14 @@
    - `homepage`
    - `bugs.url`
    - `author`
-2. Configure npm Trusted Publishing for GitHub Actions:
-   - npm package settings -> Trusted publishers
-   - provider: GitHub Actions
-   - repository: `AlexanderMatveev/js-codeviz`
-   - workflow: `.github/workflows/publish.yml`
-3. Login to npm locally (optional, for manual publish fallback):
+2. Create npm granular access token with publish rights.
+3. Add GitHub repository secret:
+   - name: `NPM_TOKEN`
+   - value: npm token from step 2
+4. Login to npm locally (optional, for manual publish fallback):
    - `npm login`
 
-## Publish flow (GitHub Release -> npm)
+## Publish flow (GitHub Release -> npm via `NPM_TOKEN`)
 
 1. Bump version:
    - `npm version patch` (or `minor` / `major`)
