@@ -5,6 +5,10 @@ Reusable CLI and library for generating two HTML reports:
 - chunk dependency graph from built JS chunks (`chunk-graph.html`)
 - lazy import graph from source (`lazy-graph.html`)
 
+## Example output
+
+![Example chunk graph](https://raw.githubusercontent.com/AlexanderMatveev/js-codeviz/main/example.png)
+
 ## Install
 
 ```bash

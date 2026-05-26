@@ -1,6 +1,6 @@
 {
   "name": "js-codeviz",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build chunk and lazy-import dependency graphs as HTML reports",
   "type": "module",
   "main": "./src/index.mjs",
