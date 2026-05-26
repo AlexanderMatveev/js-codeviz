@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: read
+  packages: write
 
 concurrency:
   group: npm-publish-${{ github.ref }}
@@ -36,3 +37,18 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public
+
+      - name: Setup Node.js for GitHub Packages
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          registry-url: https://npm.pkg.github.com
+          scope: "@alexandermatveev"
+
+      - name: Prepare scoped package name for GitHub Packages
+        run: npm pkg set name="@alexandermatveev/js-codeviz"
+
+      - name: Publish to GitHub Packages
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+        run: npm publish --registry https://npm.pkg.github.com
